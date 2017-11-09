@@ -37,7 +37,11 @@ import java.util.EventListener;
     **
     * @since 2.3
     */
-    
+//绑定到会话的对象可以侦听容器
+//事件通知他们会话将被钝化，并且
+//会话将被激活。一个在vm间迁移会话的容器
+//或者持久化会话需要通知所有绑定到会话的属性
+//实现HttpSessionActivationListener * *。
 public interface HttpSessionActivationListener extends EventListener { 
 
     /** Notification that the session is about to be passivated.*/

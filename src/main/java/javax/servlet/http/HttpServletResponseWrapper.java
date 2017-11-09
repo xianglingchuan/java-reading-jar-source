@@ -45,6 +45,10 @@ import javax.servlet.ServletResponseWrapper;
  *
  */
 
+//为HttpServletResponse接口提供了一个方便的实现
+//可以由希望从Servlet中调整响应的开发人员进行细分。
+//该类实现了包装器或装饰器模式。方法默认为
+//调用包装的响应对象。
 public class HttpServletResponseWrapper extends ServletResponseWrapper implements HttpServletResponse {
 
 

@@ -56,14 +56,15 @@ import java.util.ResourceBundle;
  * @author 	Various
  */
 
- 
-public abstract class GenericServlet 
-    implements Servlet, ServletConfig, java.io.Serializable
+//定义一个通用的、与协议无关的
+//* servlet。要编写一个用于使用的HTTP servlet
+//Web，扩展@link javax.servlet.http。HttpServlet }。
+
+public abstract class GenericServlet  implements Servlet, ServletConfig, java.io.Serializable
 {
     private static final String LSTRING_FILE = "javax.servlet.LocalStrings";
-    private static ResourceBundle lStrings =
-        ResourceBundle.getBundle(LSTRING_FILE);
-
+    private static ResourceBundle lStrings = ResourceBundle.getBundle(LSTRING_FILE);
+    
     private transient ServletConfig config;
     
 
@@ -73,7 +74,6 @@ public abstract class GenericServlet
      * is done by one of the <code>init</code> methods.
      *
      */
-
     public GenericServlet() { }
     
     
@@ -81,8 +81,8 @@ public abstract class GenericServlet
    /**
      * Called by the servlet container to indicate to a servlet that the
      * servlet is being taken out of service.  See {@link Servlet#destroy}.
-     *
-     * 
+	由servlet容器调用，以指示servlet
+	servlet被剥夺了服务。看到{ @link Servlet #摧毁}。
      */
 
     public void destroy() {
@@ -113,7 +113,6 @@ public abstract class GenericServlet
             throw new IllegalStateException(
                 lStrings.getString("err.servlet_config_not_initialized"));
         }
-
         return sc.getInitParameter(name);
     }
     
@@ -133,7 +132,11 @@ public abstract class GenericServlet
     * @return Enumeration 	an enumeration of <code>String</code>
     *				objects containing the names of 
     *				the servlet's initialization parameters
-    *
+	返回servlet初始化参数的名称
+	作为一个字符串，它是一个很有作用的对象，它是一个很有作用的对象。
+	如果servlet没有的话，则是一个空的
+	*初始化参数。看到{ @link
+	* ServletConfig # getInitParameterNames }。
     */
 
     public Enumeration getInitParameterNames() {
@@ -142,7 +145,6 @@ public abstract class GenericServlet
             throw new IllegalStateException(
                 lStrings.getString("err.servlet_config_not_initialized"));
         }
-
         return sc.getInitParameterNames();
     }   
     
@@ -159,7 +161,7 @@ public abstract class GenericServlet
      */
     
     public ServletConfig getServletConfig() {
-	return config;
+	    return config;
     }
     
     
@@ -185,7 +187,6 @@ public abstract class GenericServlet
             throw new IllegalStateException(
                 lStrings.getString("err.servlet_config_not_initialized"));
         }
-
         return sc.getServletContext();
     }
 
@@ -230,15 +231,14 @@ public abstract class GenericServlet
      * @exception ServletException 	if an exception occurs that
      *					interrupts the servlet's normal
      *					operation
-     *
-     * 
      * @see 				UnavailableException
-     *
+		由servlet容器调用，以指示servlet
+		servlet被放到了服务中。看到{ @link Servlet init # }。
      */
 
     public void init(ServletConfig config) throws ServletException {
-	this.config = config;
-	this.init();
+		this.config = config;
+		this.init();
     }
 
 
@@ -280,7 +280,7 @@ public abstract class GenericServlet
      */
      
     public void log(String msg) {
-	getServletContext().log(getServletName() + ": "+ msg);
+	    getServletContext().log(getServletName() + ": "+ msg);
     }
    
    
@@ -303,7 +303,7 @@ public abstract class GenericServlet
      */
    
     public void log(String message, Throwable t) {
-	getServletContext().log(getServletName() + ": " + message, t);
+	    getServletContext().log(getServletName() + ": " + message, t);
     }
     
     
@@ -353,7 +353,6 @@ public abstract class GenericServlet
             throw new IllegalStateException(
                 lStrings.getString("err.servlet_config_not_initialized"));
         }
-
         return sc.getServletName();
     }
 }

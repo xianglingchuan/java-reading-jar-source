@@ -40,7 +40,8 @@ import java.util.Enumeration;
 	 *
 	 */
 
-
+//servlet容器使用的过滤器配置对象
+//在初始化期间将信息传递给过滤器。
 public interface FilterConfig {
 
 	/** 

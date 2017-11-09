@@ -51,7 +51,11 @@ import java.util.Map;
  * @see 	javax.servlet.http.HttpServletRequest
  *
  */
-
+/**
+ *
+ * Servlet请求接口类
+ * 
+ * */
 public interface ServletRequest {
 
 

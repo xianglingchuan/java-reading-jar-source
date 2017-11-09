@@ -1,5 +1,4 @@
 
-
 /*
  * The contents of this file are subject to the terms
  * of the Common Development and Distribution License
@@ -23,7 +22,7 @@
  * Copyright 2005 Sun Microsystems, Inc. All rights reserved.
  *
  * Portions Copyright Apache Software Foundation.
- */ 
+ */
 
 package javax.servlet;
 
@@ -32,85 +31,81 @@ import java.io.IOException;
 
 /**
  * 
- * Provides an input stream for reading binary data from a client
- * request, including an efficient <code>readLine</code> method
- * for reading data one line at a time. With some protocols, such
- * as HTTP POST and PUT, a <code>ServletInputStream</code>
- * object can be used to read data sent from the client.
+ * Provides an input stream for reading binary data from a client request,
+ * including an efficient <code>readLine</code> method for reading data one line
+ * at a time. With some protocols, such as HTTP POST and PUT, a
+ * <code>ServletInputStream</code> object can be used to read data sent from the
+ * client.
  *
- * <p>A <code>ServletInputStream</code> object is normally retrieved via
- * the {@link ServletRequest#getInputStream} method.
- *
- *
- * <p>This is an abstract class that a servlet container implements.
- * Subclasses of this class
- * must implement the <code>java.io.InputStream.read()</code> method.
+ * <p>
+ * A <code>ServletInputStream</code> object is normally retrieved via the
+ * {@link ServletRequest#getInputStream} method.
  *
  *
- * @author 	Various
+ * <p>
+ * This is an abstract class that a servlet container implements. Subclasses of
+ * this class must implement the <code>java.io.InputStream.read()</code> method.
  *
- * @see		ServletRequest 
  *
+ * @author Various
+ *
+ * @see ServletRequest
+	提供从客户端请求读取二进制数据的输入流，
+	读取数据一行的方法，包括一个有效的代码。一次。使用一些协议，比如HTTP POST和PUT，a对象可以用来读取从数据中发送的数据。客户端。
  */
 
 public abstract class ServletInputStream extends InputStream {
 
+	/**
+	 * Does nothing, because this is an abstract class.
+	 *
+	 */
 
-
-    /**
-     * Does nothing, because this is an abstract class.
-     *
-     */
-
-    protected ServletInputStream() { }
-
-  
-  
-    
-    /**
-     *
-     * Reads the input stream, one line at a time. Starting at an
-     * offset, reads bytes into an array, until it reads a certain number
-     * of bytes or reaches a newline character, which it reads into the
-     * array as well.
-     *
-     * <p>This method returns -1 if it reaches the end of the input
-     * stream before reading the maximum number of bytes.
-     *
-     *
-     *
-     * @param b 		an array of bytes into which data is read
-     *
-     * @param off 		an integer specifying the character at which
-     *				this method begins reading
-     *
-     * @param len		an integer specifying the maximum number of 
-     *				bytes to read
-     *
-     * @return			an integer specifying the actual number of bytes 
-     *				read, or -1 if the end of the stream is reached
-     *
-     * @exception IOException	if an input or output exception has occurred
-     *
-     */
-     
-    public int readLine(byte[] b, int off, int len) throws IOException {
-
-	if (len <= 0) {
-	    return 0;
+	protected ServletInputStream() {
 	}
-	int count = 0, c;
 
-	while ((c = read()) != -1) {
-	    b[off++] = (byte)c;
-	    count++;
-	    if (c == '\n' || count == len) {
-		break;
-	    }
+	/**
+	 *
+	 * Reads the input stream, one line at a time. Starting at an offset, reads
+	 * bytes into an array, until it reads a certain number of bytes or reaches
+	 * a newline character, which it reads into the array as well.
+	 *
+	 * <p>
+	 * This method returns -1 if it reaches the end of the input stream before
+	 * reading the maximum number of bytes.
+	 *
+	 *
+	 *
+	 * @param b
+	 *            an array of bytes into which data is read
+	 *
+	 * @param off
+	 *            an integer specifying the character at which this method
+	 *            begins reading
+	 *
+	 * @param len
+	 *            an integer specifying the maximum number of bytes to read
+	 *
+	 * @return an integer specifying the actual number of bytes read, or -1 if
+	 *         the end of the stream is reached
+	 *
+	 * @exception IOException
+	 *                if an input or output exception has occurred
+	 *
+	 */
+
+	public int readLine(byte[] b, int off, int len) throws IOException {
+		if (len <= 0) {
+			return 0;
+		}
+		int count = 0, c;
+		while ((c = read()) != -1) {
+			b[off++] = (byte) c;
+			count++;
+			if (c == '\n' || count == len) {
+				break;
+			}
+		}
+		return count > 0 ? count : -1;
 	}
-	return count > 0 ? count : -1;
-    }
 }
-
-
-

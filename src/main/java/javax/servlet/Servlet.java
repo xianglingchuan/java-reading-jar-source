@@ -66,7 +66,11 @@ import java.io.IOException;
  *
  */
 
-
+/***
+ * 
+ * Servlet接口类
+ * 
+ * */
 public interface Servlet {
 
     /**

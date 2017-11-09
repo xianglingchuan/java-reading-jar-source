@@ -35,6 +35,10 @@ package javax.servlet;
       * is the ServletContext of this web application.
       * @see ServletRequestListener
       * @since	Servlet 2.4
+	此类事件指示生命周期
+	用于ServletRequest的事件。
+	事件的来源
+	是这个web应用程序的ServletContext。
       */
 
 public class ServletRequestEvent extends java.util.EventObject { 

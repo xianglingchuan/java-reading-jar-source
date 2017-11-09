@@ -81,7 +81,9 @@ import javax.servlet.ServletContext;
  * @see 	HttpSessionContext
  *
  */
-
+//提供一种跨多个页面识别用户的方法
+//请求或访问Web站点并存储关于该用户的信息。
+//*
 public interface HttpSession {
 
 
@@ -101,7 +103,8 @@ public interface HttpSession {
      *					invalidated session
      *
      */
-
+//	返回这个会话创建时的时间
+//	从1970年1月1日午夜开始，以毫秒为单位。
     public long getCreationTime();
     
     
@@ -116,7 +119,9 @@ public interface HttpSession {
      * @return				a string specifying the identifier
      *					assigned to this session
      */
-
+//    返回一个包含惟一标识符的字符串
+//    *这个会话。标识符分配
+//    由servlet容器和实现依赖。
     public String getId();
     
     
@@ -142,7 +147,9 @@ public interface HttpSession {
      *					invalidated session
      *
      */
-
+//    最后一次客户端发送一个与之相关的请求
+//    这个session，就像午夜之后的毫秒数
+//    在格林尼治时间1970年1月1日，并在容器收到请求的时候标记。
     public long getLastAccessedTime();
     
     
@@ -152,7 +159,7 @@ public interface HttpSession {
     * @return The ServletContext object for the web application
     * @since 2.3
     */
-
+    //返回这个会话所属的ServletContext。
     public ServletContext getServletContext();
 
 
@@ -166,7 +173,9 @@ public interface HttpSession {
      * 				of seconds 
      *
      */
-    
+//    指定时间，以秒为间隔，在客户端请求之前
+//    servlet容器将使此会话无效。消极的时候
+//    表示会话不应该超时。
     public void setMaxInactiveInterval(int interval);
 
 
@@ -189,7 +198,12 @@ public interface HttpSession {
     *
     *
     */
-
+//    返回最大的时间间隔，以秒为间隔
+//    servlet容器将保持会话之间的开放
+//    *客户端访问。在这个时间间隔之后，servlet容器
+//    将使会话无效。可以设置最大的时间间隔
+//    使用了setMaxInactiveInterval的方法。
+//    负时间表示会话不应该超时。
     public int getMaxInactiveInterval();
     
     
@@ -222,7 +236,8 @@ public interface HttpSession {
      *					invalidated session
      *
      */
-  
+//    在这个会话中返回与指定名称绑定的对象
+//    如果没有对象被绑定到这个名称中。
     public Object getAttribute(String name);
     
     
@@ -261,7 +276,8 @@ public interface HttpSession {
      *					invalidated session
      *
      */
-    
+//    返回的是字符串的字符串/代码，对象是字符串。
+//    包含绑定到这个会话的所有对象的名称。
     public Enumeration getAttributeNames();
     
     
@@ -316,7 +332,9 @@ public interface HttpSession {
      *					invalidated session
      *
      */
- 
+//    使用指定的名称将一个对象绑定到这个会话。
+//    如果一个同名的对象已经被绑定到会话，
+//    对象被替换了。
     public void setAttribute(String name, Object value);
     
 
@@ -365,7 +383,9 @@ public interface HttpSession {
      * @exception IllegalStateException	if this method is called on an
      *					invalidated session
      */
-
+//    删除与指定名称绑定的对象
+//    *这个会话。如果会话中没有对象
+//    用指定的名称绑定，这个方法什么也不做。
     public void removeAttribute(String name);
 
 
@@ -397,6 +417,7 @@ public interface HttpSession {
      * @exception IllegalStateException	if this method is called on an
      *					already invalidated session
      *
+     *使这个会话失效，然后解除绑定任何对象的绑定
      */
 
     public void invalidate();
@@ -420,7 +441,12 @@ public interface HttpSession {
      *					already invalidated session
      *
      */
-
+//    如果客户端还不知道该如何做，则返回true/code
+//    会话或客户端选择不加入会话。为
+//    例如，如果服务器仅使用基于cookie的会话，并且
+//    客户端禁用了cookie，然后是会话
+//    对每个请求都是新的。
+    
     public boolean isNew();
 
 

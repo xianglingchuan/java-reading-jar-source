@@ -38,7 +38,10 @@ import java.io.IOException;
     * @see Filter
     * @since Servlet 2.3
     **/
-
+//FilterChain是由servlet容器提供给开发人员的对象
+//对资源的过滤请求的调用链给出一个视图。过滤器
+//使用FilterChain来调用链中的下一个过滤器，或者调用过滤器
+//是链中的最后一个过滤器，用于调用链末端的资源。
 public interface FilterChain {
 	
 	/**

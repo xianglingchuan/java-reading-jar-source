@@ -48,7 +48,11 @@ import java.util.EventListener;
  * @see HttpSessionBindingEvent
  *
  */
-
+//当对象被绑定时，就会通知对象
+//或者从一个会话中释放。对象的通知
+//通过@link HttpSessionBindingEvent对象。这可能是结果
+//servlet程序员显式地从会话中解出一个属性，
+//由于会话失效，或者由于会话超时。
 public interface HttpSessionBindingListener extends EventListener {
 
 

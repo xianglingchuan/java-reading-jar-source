@@ -48,7 +48,12 @@ import java.io.IOException;
  * @see 	ServletContext#getRequestDispatcher(java.lang.String)
  * @see 	ServletContext#getNamedDispatcher(java.lang.String)
  * @see 	ServletRequest#getRequestDispatcher(java.lang.String)
- *
+	定义一个接收来自客户端的请求的对象
+	并将它们发送给任何资源(例如servlet，
+	服务器上的HTML文件或JSP文件)。servlet
+	容器创建了RequestDispatcher/codeobject的作用，
+	它被用作服务器资源的包装器
+	在特定的路径或特定的名称中。
  */
  
 public interface RequestDispatcher {

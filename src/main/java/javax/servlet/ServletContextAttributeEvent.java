@@ -33,6 +33,7 @@ package javax.servlet;
 	*  servlet context of a web application.
 	* @see ServletContextAttributeListener
 	 * @since	v 2.3
+	 这是事件类，用于通知关于更改属性的通知web应用程序的servlet上下文。
 	*/
 
 public class ServletContextAttributeEvent extends ServletContextEvent { 

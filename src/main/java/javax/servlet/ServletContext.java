@@ -60,7 +60,8 @@ import java.util.Set;
  *
  * @see 	Servlet#getServletConfig
  * @see 	ServletConfig#getServletContext
- *
+	定义一组servlet用来与之通信的方法
+	例如，servlet容器获取文件的MIME类型，分派请求，或写入一个日志文件。
  */
 
 public interface ServletContext {

@@ -448,8 +448,8 @@ public interface ServletResponse {
      * have no effect. If no locale has been specified,
      * the container's default locale is returned.
      * 
-     * @see 		#setLocale
      *
+     * @see 		#setLocale
      */
 
     public Locale getLocale();

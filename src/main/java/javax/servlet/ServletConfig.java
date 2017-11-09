@@ -37,7 +37,11 @@ import java.util.Enumeration;
  * to pass information to a servlet during initialization. 
  *
  */
- 
+/***
+ * 
+ * Servlet配置接口类
+ * servlet容器使用的servlet配置对象在初始化期间将信息传递给servlet
+ * */
 public interface ServletConfig {
     
 
@@ -53,6 +57,14 @@ public interface ServletConfig {
      *
      */
 
+	/***
+	 * 
+	 * 返回这个servlet实例的名称。这个名称可以通过服务器管理来提供，
+	 * web应用程序部署描述符或未注册的(因此未命名的)servlet实例它将是servlet的类名。
+	 * 
+	 * @return servlet实例的名称
+	 * 
+	 */
     public String getServletName();
 
     /**
@@ -68,7 +80,12 @@ public interface ServletConfig {
      *
      */
 
+    /**
+     * 
+     * @return 调用者使用的@link ServletContext对象与它的servlet容器进行交互
+     * */
     public ServletContext getServletContext();
+    
     
     /**
      * Returns a <code>String</code> containing the value of the 
@@ -99,7 +116,10 @@ public interface ServletConfig {
      *
      *
      */
-
+    /**
+     * 返回Servlet初始化的参数信息，返回类型为Enumeration
+     * 
+     * */
     public Enumeration getInitParameterNames();
 
 

@@ -64,6 +64,7 @@ public interface Filter {
         * 1.Throws a ServletException <br>
         * 2.Does not return within a time period defined by the web container 
 	*/
+	//初始化过滤器方法
 	public void init(FilterConfig filterConfig) throws ServletException;
 	
 	
@@ -83,6 +84,7 @@ public interface Filter {
 	** 4. b) <strong>or</strong> not pass on the request/response pair to the next entity in the filter chain to block the request processing<br>
 	** 5. Directly set headers on the response after invocation of the next entity in the filter chain.
 	**/
+	//执行过滤器
     public void doFilter ( ServletRequest request, ServletResponse response, FilterChain chain ) throws IOException, ServletException;
 
 	/**
@@ -95,7 +97,7 @@ public interface Filter {
 	* example, memory, file handles, threads) and make sure that any persistent state is synchronized
 	* with the filter's current state in memory.
 	*/
-
+    //释放
 	public void destroy();
 
 

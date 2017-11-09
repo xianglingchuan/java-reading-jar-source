@@ -34,7 +34,9 @@ import java.util.EventListener;
 	* this web application.
 	* @since	v 2.3
 */
-
+///这个监听器接口可以被实现
+//获取关于会话属性列表的更改通知
+//*这个web应用程序。
 public interface HttpSessionAttributeListener extends EventListener {
 	/** Notification that an attribute has been added to a session. Called after the attribute is added.*/
     public void attributeAdded ( HttpSessionBindingEvent se );

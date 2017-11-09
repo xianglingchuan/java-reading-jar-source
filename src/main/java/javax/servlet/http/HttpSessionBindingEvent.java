@@ -50,7 +50,11 @@ package javax.servlet.http;
  * @see 		HttpSessionBindingListener
  * @see			HttpSessionAttributeListener
  */
-
+//该类型的事件被发送到一个实现的对象
+//* { @link HttpSessionBindingListener }当绑定或
+//*从会话释放,或{ @link HttpSessionAttributeListener }
+//当任何属性都在部署描述符中配置时
+//在会话中绑定、取消或替换。
 public class HttpSessionBindingEvent extends HttpSessionEvent {
 
 
@@ -85,8 +89,8 @@ public class HttpSessionBindingEvent extends HttpSessionEvent {
      */
 
     public HttpSessionBindingEvent(HttpSession session, String name) {
-	super(session);
-	this.name = name;
+		super(session);
+		this.name = name;
     }
     
     /**
@@ -108,15 +112,15 @@ public class HttpSessionBindingEvent extends HttpSessionEvent {
      */
     
     public HttpSessionBindingEvent(HttpSession session, String name, Object value) {
-	super(session);
-	this.name = name;
-	this.value = value;
+		super(session);
+		this.name = name;
+		this.value = value;
     }
     
     
    	/** Return the session that changed. */
     public HttpSession getSession () { 
-	return super.getSession();
+		return super.getSession();
     }
  
    
@@ -136,7 +140,7 @@ public class HttpSessionBindingEvent extends HttpSessionEvent {
      */
 
     public String getName() {
-	return name;
+		return name;
     }
     
     /**

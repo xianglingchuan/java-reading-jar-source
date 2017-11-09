@@ -1,4 +1,4 @@
-package com.learn.web.servlet;
+package com.javax.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;

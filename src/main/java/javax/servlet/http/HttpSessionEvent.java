@@ -32,6 +32,8 @@ package javax.servlet.http;
 	* changes to sessions within a web application.
 	 * @since	v 2.3
 	*/
+///这是代表事件通知的类
+//更改web应用程序中的会话。
 public class HttpSessionEvent extends java.util.EventObject {
 	/** Construct a session event from the given source.*/
 	 public HttpSessionEvent(HttpSession source) {

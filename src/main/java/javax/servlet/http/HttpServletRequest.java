@@ -43,7 +43,11 @@ import java.util.Enumeration;
  *
  * @author 	Various
  */
-
+/**
+*
+* HttpServlet请求接口类
+* 
+* */
 public interface HttpServletRequest extends ServletRequest {
 
     /**

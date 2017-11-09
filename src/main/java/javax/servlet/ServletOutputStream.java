@@ -47,7 +47,8 @@ import java.util.ResourceBundle;
  * @author 	Various
  *
  * @see 	ServletResponse
- *
+提供将二进制数据发送到该数据的输出流
+*客户端。对象通常是被检索到的，对象是:ServletOutputStream
  */
 
 public abstract class ServletOutputStream extends OutputStream {

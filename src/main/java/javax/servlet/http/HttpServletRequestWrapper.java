@@ -42,7 +42,10 @@ import java.util.Enumeration;
   * @since	v 2.3
  *
  */
-
+//为HttpServletRequest接口提供了一个方便的实现
+//可以由希望将请求改编为Servlet的开发人员进行细分。
+//该类实现了包装器或装饰器模式。方法默认为
+//调用被包装的请求对象。
 
 public class HttpServletRequestWrapper extends ServletRequestWrapper implements HttpServletRequest {
 

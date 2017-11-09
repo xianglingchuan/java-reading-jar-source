@@ -470,7 +470,7 @@ public interface HttpServletResponse extends ServletResponse {
      * Status code (400) indicating the request sent by the client was
      * syntactically incorrect.
      */
-
+//     状态码(400)表示客户端发送的请求是语法不正确。
     public static final int SC_BAD_REQUEST = 400;
 
     /**
@@ -506,6 +506,9 @@ public interface HttpServletResponse extends ServletResponse {
      * identified by the <code><em>Request-URI</em></code>.
      */
 
+//    状态码(405)表示在该方法中指定的方法
+//    是不允许使用资源的。
+//    由“请求-uri”的作用所确定的。    
     public static final int SC_METHOD_NOT_ALLOWED = 405;
 
     /**

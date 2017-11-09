@@ -37,7 +37,10 @@ import java.util.EventListener;
 	* @see HttpSessionEvent
 	 * @since	v 2.3
 	*/
-
+//该接口的实现将通知更改
+//web应用程序中的活动会话列表。
+//要接收通知事件，实现类
+//必须在web应用程序的部署描述符中配置。
 public interface HttpSessionListener extends EventListener {
     
 	/** 

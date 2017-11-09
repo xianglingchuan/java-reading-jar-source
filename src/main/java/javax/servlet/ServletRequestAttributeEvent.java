@@ -33,6 +33,8 @@ package javax.servlet;
       * attributes of the servlet request in an application.
       * @see ServletRequestAttributeListener
       * @since	Servlet 2.4
+      * 
+	  这是用于通知更改的事件类应用程序中servlet请求的属性。
       */
 
 public class ServletRequestAttributeEvent extends ServletRequestEvent { 
