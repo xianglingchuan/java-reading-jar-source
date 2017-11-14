@@ -97,11 +97,14 @@
 		<!-- end json/xml处理扩展 -->
 
 		<!-- start jsp界面上jstl/core引用标签所需要的两个jar包 -->
+		
+		<!-- 源码阅读 -->
 		<!-- <dependency>
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>javax.servlet.jsp.jstl</artifactId>
 			<version>1.2.1</version>
 		</dependency> -->
+		
 		<dependency>
 			<groupId>org.apache.taglibs</groupId>
 			<artifactId>taglibs-standard-impl</artifactId>
@@ -110,7 +113,88 @@
 		<!-- end jsp界面上jstl/core引用标签所需要的两个jar包 -->
 
 
-	</dependencies>
+        <!-- 源码阅读 -->
+		<!-- <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.6</version>
+		</dependency>	-->
+			
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.3.0</version>
+		</dependency> 
+
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>1.7.21</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+<!-- 		<dependency>
+		    <groupId>org.javassist</groupId>
+		    <artifactId>javassist</artifactId>
+		    <version>3.20.0-GA</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/ognl/ognl -->
+		<dependency>
+		    <groupId>ognl</groupId>
+		    <artifactId>ognl</artifactId>
+		    <version>3.2</version>
+		</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/opensymphony/ognl -->
+<dependency>
+    <groupId>opensymphony</groupId>
+    <artifactId>ognl</artifactId>
+    <version>2.6.11</version>
+</dependency>
+
+
+
+<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+<dependency>
+    <groupId>com.google.protobuf</groupId>
+    <artifactId>protobuf-java</artifactId>
+    <version>3.2.0</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+<dependency>
+    <groupId>com.mchange</groupId>
+    <artifactId>c3p0</artifactId>
+    <version>0.9.5.2</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.jboss/jboss-common-core -->
+<dependency>
+    <groupId>org.jboss</groupId>
+    <artifactId>jboss-common-core</artifactId>
+    <version>2.2.17.GA</version>
+</dependency>
+
+
+	
+
+<!-- https://mvnrepository.com/artifact/jboss.jbossas.core-libs/jboss-common-jdbc-wrapper -->
+<dependency>
+    <groupId>jboss.jbossas.core-libs</groupId>
+    <artifactId>jboss-common-jdbc-wrapper</artifactId>
+    <version>4.0.4.GA</version>
+</dependency>
+
+
+
+</dependencies>
+
 	<build>
 		<finalName>com.learn</finalName>
 	</build>

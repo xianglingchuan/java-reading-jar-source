@@ -7,12 +7,22 @@
   
 	<servlet>
 		<servlet-name>HomeServlet</servlet-name>
-		<servlet-class>com.learn.web.servlet.HomeServlet</servlet-class>
+		<servlet-class>com.javax.servlet.HomeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>HomeServlet</servlet-name>
 		<url-pattern>/home.action</url-pattern>
 	</servlet-mapping>  
+  
+  
+	<servlet>
+		<servlet-name>DemoServlet</servlet-name>
+		<servlet-class>com.demo.servlet.DemoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DemoServlet</servlet-name>
+		<url-pattern>/demo.action</url-pattern>
+	</servlet-mapping>   
   
   
 </web-app>

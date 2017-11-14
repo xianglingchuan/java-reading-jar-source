@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd" >
+        
+    <!-- 每次请求(每次使用)创建新的实例，destroy方式不生效 -->    
+	<!-- <bean id="beanScope" class="com.ioc.bean.BeanScope" scope="prototype"></bean> -->
+	
+	<!-- 单列模式启动 -->
+	<bean id="beanScope" class="com.ioc.bean.BeanScope" scope="singleton"></bean>
+	
+	
+	
+ </beans>

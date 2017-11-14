@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd"> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">        
+
+
+
+ 	<bean id="simpleAspect" class="com.aop.schema.advice.SimpleAspect"></bean>
+ 	
+ 	<bean id="aspectBiz" class="com.aop.schema.advice.biz.AspectBiz"></bean>
+ 	
+ 	<aop:config>
+ 	   <aop:aspect id="simpleAspectAOP" ref="simpleAspect">
+<!--  	       <aop:pointcut expression="execution(* com.aop.schema.advice.*Biz.*(..))" id="simplePointcut"></aop:pointcut>
+ 	       <aop:before method="before" pointcut-ref="simplePointcut"></aop:before>
+ 	       <aop:after-returning pointcut-ref="simplePointcut" method="afterReturning"/>
+ 	       <aop:after-throwing pointcut-ref="simplePointcut" method="afterThrowing"/>
+ 	       <aop:after pointcut-ref="simplePointcut" method="after"/>
+ 	       <aop:around pointcut-ref="simplePointcut" method="around"/> -->
+ 	       
+<!--  	       <aop:around method="aroundInit" pointcut="execution(* com.aop.schema.advice.AspectBiz.init(String,int)) 
+ 	       and args(name,age)"/> -->
+ 	       
+ <!-- 	       <aop:declare-parents 
+ 	       types-matching="com.aop.schema.advice.biz.*(+)" 
+ 	       implement-interface="com.aop.schema.advice.FitIntface"
+ 	       default-impl="com.aop.schema.advice.FitImpl"/> -->
+ 	       
+			<aop:declare-parents types-matching="com.aop.schema.advice.biz.*(+)" 
+				 implement-interface="com.aop.schema.advice.FitInterface"
+			     default-impl="com.aop.schema.advice.FitImpl"/>	       
+ 	   </aop:aspect>
+ 	</aop:config>
+	
+ </beans>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
